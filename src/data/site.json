@@ -1,0 +1,60 @@
+{
+    "siteName": "Rise Above Partners",
+    "siteDescription": "Rise Above Partners specializes in crafting strategic marketing initiatives that elevate businesses in niche industries.",
+    "logo": "/images/logo.svg",
+    "favicon": "/favicon.ico",
+    "navigation": [
+      { "label": "Home", "href": "/" },
+      { "label": "Services", "href": "/services" },
+      { "label": "About", "href": "/about" },
+      { "label": "Results", "href": "/results" },
+      { "label": "Insights", "href": "/insights" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "footerLinks": [
+      { "label": "Privacy Policy", "href": "/privacy", "enabled": true },
+      { "label": "Terms", "href": "/terms", "enabled": true },
+      { "label": "FAQ", "href": "/faq", "enabled": true }
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com/company/rise-above-partners",
+      "twitter": "https://twitter.com/riseabovepartners",
+      "instagram": "https://instagram.com/riseabovepartners"
+    },
+    "contact": {
+      "email": "info@riseabovepartners.com",
+      "phone": "(123) 456-7890",
+      "address": {
+        "street": "123 Marketing Street",
+        "suite": "Suite 456",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94105",
+        "country": "USA"
+      }
+    },
+    "company": {
+      "founded": "2022",
+      "team": [
+        {
+          "name": "Jane Doe",
+          "title": "Founder & CEO",
+          "bio": "With over 15 years of experience in marketing leadership roles, Jane has helped numerous brands transform their marketing operations into growth engines.",
+          "image": "/images/team/jane-doe.jpg",
+          "linkedin": "https://linkedin.com/in/janedoe"
+        },
+        {
+          "name": "John Smith",
+          "title": "Chief Strategy Officer",
+          "bio": "John brings a wealth of experience in developing data-driven marketing strategies that deliver measurable results for clients across diverse industries.",
+          "image": "/images/team/john-smith.jpg",
+          "linkedin": "https://linkedin.com/in/johnsmith"
+        }
+      ]
+    },
+    "meta": {
+      "ogImage": "/images/og-image.jpg",
+      "twitterUsername": "@riseabovepartners",
+      "googleAnalyticsId": "G-XXXXXXXXXX"
+    }
+  }

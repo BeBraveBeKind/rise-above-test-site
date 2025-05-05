@@ -1,0 +1,278 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import services from '../data/services.json';
+import testimonials from '../data/testimonials.json';
+import homeData from '../data/home.json';
+---
+
+<BaseLayout 
+  title="Strategic Marketing for Niche Industries"
+  description="Rise Above Partners specializes in strategic marketing initiatives that transform businesses from cost centers to growth engines."
+>
+  <!-- Hero Section -->
+  <section class="bg-brandBlue text-white py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1">
+          <h1 class="text-4xl md:text-5xl font-semibold mb-4 leading-tight animate-fade-in">
+            {homeData.heroTitle}
+          </h1>
+          <p class="text-lg md:text-xl mb-8 max-w-lg opacity-90 animate-fade-in" style="animation-delay: 0.2s">
+            {homeData.heroDescription}
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.4s">
+            <a href="/contact" class="bg-white text-brandBlue py-3 px-6 rounded-sm font-semibold hover:bg-opacity-90 transition-all transform hover:-translate-y-0.5 text-center">
+              Get Started
+            </a>
+            <a href="/services" class="border border-white text-white py-3 px-6 rounded-sm font-semibold hover:bg-white hover:bg-opacity-10 transition-all text-center">
+              Our Services
+            </a>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 flex justify-center md:justify-end animate-fade-in" style="animation-delay: 0.3s">
+          <!-- Replace with an appropriate hero image -->
+          <img 
+            src="/images/hero-graphic.svg" 
+            alt="Strategic Marketing Visualization" 
+            class="max-w-full h-auto rounded-md shadow-lg"
+            width="500" 
+            height="400"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">What We Do</h2>
+        <p class="text-mediumGray max-w-2xl mx-auto">
+          Our strategic marketing services are designed to elevate your brand and drive consistent growth.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div class="bg-lightGray rounded-md p-6 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in" style={`animation-delay: ${0.2 + index * 0.1}s`}>
+            <h3 class="text-xl font-semibold mb-3">{service.title}</h3>
+            <p class="text-mediumGray mb-4">{service.description}</p>
+            <a href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`} class="text-brandBlue font-medium hover:underline inline-flex items-center">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (Brief) -->
+  <section class="py-16 bg-lightGray">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">About Rise Above Partners</h2>
+          <p class="text-mediumGray mb-4">
+            Rise Above Partners is a dynamic marketing firm specializing in crafting and executing strategic marketing initiatives tailored for niche industries.
+          </p>
+          <p class="text-mediumGray mb-6">
+            Recognizing the unique challenges and opportunities within specialized sectors, we focus on elevating our clients' professional web presence through targeted digital strategies, compelling content creation, and data-driven insights.
+          </p>
+          <a href="/about" class="inline-flex items-center text-brandBlue font-medium hover:underline">
+            Learn more about us
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <!-- Replace with appropriate image -->
+          <img 
+            src="/images/about-image.jpg" 
+            alt="Rise Above Partners Team" 
+            class="max-w-full h-auto rounded-md shadow-lg"
+            width="500" 
+            height="400"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">How We Help You Rise Above</h2>
+        <p class="text-mediumGray max-w-2xl mx-auto">
+          Our approach combines strategic thinking with tactical execution to deliver measurable results.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {homeData.features.map((feature, index) => (
+          <div class="flex flex-col items-center text-center p-6 animate-fade-in" style={`animation-delay: ${0.2 + index * 0.1}s`}>
+            <!-- Replace with appropriate icons -->
+            <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mb-4 text-brandBlue">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={
+                  index === 0 ? "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" :
+                  index === 1 ? "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" :
+                  "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                } />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">{feature.title}</h3>
+            <p class="text-mediumGray">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="py-16 bg-lightGray">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-4">What Our Clients Say</h2>
+        <p class="text-mediumGray max-w-2xl mx-auto">
+          Don't just take our word for it—hear from the clients we've helped succeed.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <!-- If testimonials are available, show them, otherwise show placeholder -->
+        {testimonials && testimonials.length > 0 ? (
+          <div id="testimonial-carousel" class="relative">
+            {testimonials.map((testimonial, index) => (
+              <div class={`testimonial-slide ${index === 0 ? 'block' : 'hidden'}`}>
+                <div class="bg-white p-8 rounded-md shadow-md">
+                  <div class="flex items-center mb-4">
+                    <div class="text-4xl text-brandBlue opacity-50">"</div>
+                  </div>
+                  <p class="text-lg italic mb-6">{testimonial.quote}</p>
+                  <div class="flex items-center">
+                    <div class="mr-4">
+                      <img 
+                        src={testimonial.image || "/images/placeholder-avatar.jpg"} 
+                        alt={testimonial.name}
+                        class="w-12 h-12 rounded-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p class="font-semibold">{testimonial.name}</p>
+                      <p class="text-sm text-mediumGray">{testimonial.title}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            <!-- Testimonial Controls -->
+            <div class="flex justify-center mt-6 gap-2">
+              {testimonials.map((_, index) => (
+                <button 
+                  class={`testimonial-dot w-3 h-3 rounded-full ${index === 0 ? 'bg-brandBlue' : 'bg-gray-300'}`}
+                  data-index={index}
+                  aria-label={`Testimonial ${index + 1}`}
+                ></button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div class="bg-white p-8 rounded-md shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-4xl text-brandBlue opacity-50">"</div>
+            </div>
+            <p class="text-lg italic mb-6">
+              Rise Above Partners transformed our marketing strategy. Their data-driven approach helped us achieve consistent growth and establish ourselves as industry leaders.
+            </p>
+            <div class="flex items-center">
+              <div class="mr-4">
+                <img 
+                  src="/images/placeholder-avatar.jpg" 
+                  alt="John Smith"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <div>
+                <p class="font-semibold">John Smith</p>
+                <p class="text-sm text-mediumGray">Marketing Director, Company Inc.</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-brandBlue text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Ready to Rise Above?</h2>
+      <p class="text-lg max-w-2xl mx-auto mb-8 opacity-90">
+        Let's discuss how our strategic marketing services can help you achieve your growth goals.
+      </p>
+      <a 
+        href="/contact"
+        class="inline-block bg-white text-brandBlue py-3 px-8 rounded-sm font-semibold hover:bg-opacity-90 transition-all transform hover:-translate-y-0.5"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Testimonial Carousel Functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    
+    if (slides.length <= 1) return;
+    
+    // Set up dot click handlers
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index') || '0');
+        
+        // Hide all slides
+        slides.forEach(slide => slide.classList.add('hidden'));
+        
+        // Show the selected slide
+        slides[index].classList.remove('hidden');
+        
+        // Update dots
+        dots.forEach(d => d.classList.remove('bg-brandBlue'));
+        dots.forEach(d => d.classList.add('bg-gray-300'));
+        dot.classList.remove('bg-gray-300');
+        dot.classList.add('bg-brandBlue');
+      });
+    });
+    
+    // Auto-rotate testimonials
+    let currentIndex = 0;
+    const intervalTime = 6000; // 6 seconds
+    
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      
+      // Hide all slides
+      slides.forEach(slide => slide.classList.add('hidden'));
+      
+      // Show the next slide
+      slides[currentIndex].classList.remove('hidden');
+      
+      // Update dots
+      dots.forEach(d => d.classList.remove('bg-brandBlue'));
+      dots.forEach(d => d.classList.add('bg-gray-300'));
+      dots[currentIndex].classList.remove('bg-gray-300');
+      dots[currentIndex].classList.add('bg-brandBlue');
+    }, intervalTime);
+  });
+</script>
