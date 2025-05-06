@@ -1,0 +1,31 @@
+{
+  "name": "Rise Above Partners",
+  "description": "A dynamic marketing firm specializing in crafting and executing strategic marketing initiatives tailored for niche industries.",
+  "baseUrl": "https://riseabovepartners.com",
+  "brand": {
+    "colors": {
+      "primary": "#6D98BA",
+      "white": "#FFFFFF"
+    },
+    "typography": {
+      "primary": "Montserrat SemiBold",
+      "secondary": "Montserrat Medium"
+    },
+    "logo": {
+      "main": "/images/logo.svg",
+      "favicon": "/images/favicon.ico"
+    }
+  },
+  "navigation": {
+    "header": [
+      { "title": "Home", "path": "/" },
+      { "title": "Services", "path": "/services" },
+      { "title": "About", "path": "/about" },
+      { "title": "Contact", "path": "/contact" }
+    ],
+    "footer": [
+      { "title": "Privacy", "path": "/privacy" },
+      { "title": "Terms", "path": "/terms" }
+    ]
+  }
+}
