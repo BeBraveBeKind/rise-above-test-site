@@ -1,113 +1,36 @@
 ---
-// src/layouts/BaseLayout.astro
+// Import statements
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+// Add your other imports here
 
-interface Props {
-  title: string;
-  description?: string;
-  ogImage?: string;
-}
-
-const { 
-  title,
-  description = "Rise Above Partners specializes in strategic marketing initiatives for niche industries, helping businesses establish themselves as industry leaders.",
-  ogImage = "/images/og-image.jpg",
-} = Astro.props;
-
-// Generate canonical URL
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Fix URL construction
+const { title, description, image } = Astro.props;
+const siteUrl = import.meta.env.SITE || 'https://riseabovepartners.com'; // Provide a default
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+// If you were trying to create a URL using a potentially undefined value, check for it first:
+// const someUrl = someValue ? new URL(someValue, siteUrl) : null;
 ---
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
     
-    <!-- Primary Meta Tags -->
-    <title>{title} | Rise Above Partners</title>
-    <meta name="title" content={title + " | Rise Above Partners"} />
+    <title>{title}</title>
     <meta name="description" content={description} />
     
-    <!-- Canonical Link -->
+    <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title + " | Rise Above Partners"} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title + " | Rise Above Partners"} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(ogImage, Astro.site)} />
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Rise Above Partners",
-        "url": "https://riseabovepartners.com",
-        "logo": "https://riseabovepartners.com/images/logo.svg",
-        "description": "Strategic marketing initiatives for niche industries.",
-        "sameAs": [
-          "https://www.linkedin.com/company/rise-above-partners",
-          "https://twitter.com/riseabovepartners"
-        ]
-      }
-    </script>
+    <!-- Add your favicon and other meta tags here -->
   </head>
-  <body class="min-h-screen flex flex-col">
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white px-4 py-2 z-50">
-      Skip to content
-    </a>
-    
+  <body>
     <Header />
-    
-    <main id="main-content" class="flex-grow">
+    <main>
       <slot />
     </main>
-    
     <Footer />
-    
-    <!-- JavaScript for Smooth Scroll -->
-    <script>
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth'
-            });
-            
-            // Update URL
-            history.pushState(null, null, targetId);
-          }
-        });
-      });
-    </script>
   </body>
 </html>
