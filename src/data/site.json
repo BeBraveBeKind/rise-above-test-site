@@ -1,55 +1,26 @@
 {
-  "title": "Rise Above Partners",
-  "description": "A dynamic marketing firm specializing in crafting and executing strategic marketing initiatives tailored for niche industries.",
-  "logo": "/images/logo.svg",
-  "logoMark": "/images/logomark.svg",
-  "favicon": "/images/favicon.png",
-  "appIcon": "/images/app-icon.png",
-  "url": "https://riseabovepartners.com",
-  "colors": {
-    "primary": "#6D98BA",
-    "white": "#FFFFFF"
-  },
-  "typography": {
-    "primary": {
-      "name": "Montserrat SemiBold",
-      "fallback": "sans-serif"
+  "name": "Rise Above Partners",
+  "description": "Marketing firm for niche industries",
+  "baseUrl": "https://riseabovepartners.com",
+  "brand": {
+    "colors": {
+      "primary": "#6D98BA",
+      "secondary": "#FFFFFF"
     },
-    "secondary": {
-      "name": "Montserrat Medium",
-      "fallback": "sans-serif"
+    "typography": {
+      "primary": "Montserrat SemiBold",
+      "secondary": "Montserrat Medium"
+    },
+    "logo": {
+      "main": "/images/logo/rise-above-partners-logo.svg"
     }
   },
-  "contact": {
-    "email": "info@riseabovepartners.com",
-    "phone": "+1 (555) 123-4567",
-    "address": "123 Business Ave, Suite 100, City, State 12345"
-  },
-  "social": {
-    "twitter": "https://twitter.com/riseabovepartners",
-    "linkedin": "https://linkedin.com/company/riseabovepartners",
-    "instagram": "https://instagram.com/riseabovepartners"
-  },
-  "menu": [
-    {
-      "name": "Home",
-      "url": "/"
-    },
-    {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Services",
-      "url": "/services"
-    },
-    {
-      "name": "Case Studies",
-      "url": "/case-studies"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
-    }
-  ]
+  "navigation": {
+    "header": [
+      { "title": "Home", "path": "/" },
+      { "title": "Services", "path": "/services" },
+      { "title": "About", "path": "/about" },
+      { "title": "Contact", "path": "/contact" }
+    ]
+  }
 }

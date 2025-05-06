@@ -2,14 +2,14 @@
 // Import statements
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-// Add your other imports here
+import site from '../data/site.json'; // Import site data
 
-// Fix URL construction
+// Props and URL construction
 const { title, description, image } = Astro.props;
-const siteUrl = import.meta.env.SITE || 'https://riseabovepartners.com'; // Provide a default
+const siteUrl = import.meta.env.SITE || site.baseUrl || 'https://riseabovepartners.com';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
-// If you were trying to create a URL using a potentially undefined value, check for it first:
-// const someUrl = someValue ? new URL(someValue, siteUrl) : null;
+const pageTitle = title ? `${title} | ${site.name}` : site.name;
+const pageDescription = description || site.description;
 ---
 
 <html lang="en">
@@ -18,13 +18,44 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
     
-    <!-- Add your favicon and other meta tags here -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href={site.brand?.logo?.favicon || '/favicon.ico'} />
+    
+    <!-- Base Styles -->
+    <style is:global>
+      :root {
+        --color-primary: #6D98BA;
+        --color-white: #FFFFFF;
+        --font-primary: 'Montserrat', Helvetica, Arial, sans-serif;
+      }
+      
+      body {
+        font-family: var(--font-primary);
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: var(--color-white);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 600; /* SemiBold */
+      }
+      
+      p, li, a {
+        font-weight: 500; /* Medium */
+      }
+    </style>
   </head>
   <body>
     <Header />
