@@ -1,60 +1,55 @@
 {
-    "siteName": "Rise Above Partners",
-    "siteDescription": "Rise Above Partners specializes in crafting strategic marketing initiatives that elevate businesses in niche industries.",
-    "logo": "/images/logo.svg",
-    "favicon": "/favicon.ico",
-    "navigation": [
-      { "label": "Home", "href": "/" },
-      { "label": "Services", "href": "/services" },
-      { "label": "About", "href": "/about" },
-      { "label": "Results", "href": "/results" },
-      { "label": "Insights", "href": "/insights" },
-      { "label": "Contact", "href": "/contact" }
-    ],
-    "footerLinks": [
-      { "label": "Privacy Policy", "href": "/privacy", "enabled": true },
-      { "label": "Terms", "href": "/terms", "enabled": true },
-      { "label": "FAQ", "href": "/faq", "enabled": true }
-    ],
-    "social": {
-      "linkedin": "https://linkedin.com/company/rise-above-partners",
-      "twitter": "https://twitter.com/riseabovepartners",
-      "instagram": "https://instagram.com/riseabovepartners"
+  "title": "Rise Above Partners",
+  "description": "A dynamic marketing firm specializing in crafting and executing strategic marketing initiatives tailored for niche industries.",
+  "logo": "/images/logo.svg",
+  "logoMark": "/images/logomark.svg",
+  "favicon": "/images/favicon.png",
+  "appIcon": "/images/app-icon.png",
+  "url": "https://riseabovepartners.com",
+  "colors": {
+    "primary": "#6D98BA",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "primary": {
+      "name": "Montserrat SemiBold",
+      "fallback": "sans-serif"
     },
-    "contact": {
-      "email": "info@riseabovepartners.com",
-      "phone": "(123) 456-7890",
-      "address": {
-        "street": "123 Marketing Street",
-        "suite": "Suite 456",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94105",
-        "country": "USA"
-      }
-    },
-    "company": {
-      "founded": "2022",
-      "team": [
-        {
-          "name": "Jane Doe",
-          "title": "Founder & CEO",
-          "bio": "With over 15 years of experience in marketing leadership roles, Jane has helped numerous brands transform their marketing operations into growth engines.",
-          "image": "/images/team/jane-doe.jpg",
-          "linkedin": "https://linkedin.com/in/janedoe"
-        },
-        {
-          "name": "John Smith",
-          "title": "Chief Strategy Officer",
-          "bio": "John brings a wealth of experience in developing data-driven marketing strategies that deliver measurable results for clients across diverse industries.",
-          "image": "/images/team/john-smith.jpg",
-          "linkedin": "https://linkedin.com/in/johnsmith"
-        }
-      ]
-    },
-    "meta": {
-      "ogImage": "/images/og-image.jpg",
-      "twitterUsername": "@riseabovepartners",
-      "googleAnalyticsId": "G-XXXXXXXXXX"
+    "secondary": {
+      "name": "Montserrat Medium",
+      "fallback": "sans-serif"
     }
-  }
+  },
+  "contact": {
+    "email": "info@riseabovepartners.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Business Ave, Suite 100, City, State 12345"
+  },
+  "social": {
+    "twitter": "https://twitter.com/riseabovepartners",
+    "linkedin": "https://linkedin.com/company/riseabovepartners",
+    "instagram": "https://instagram.com/riseabovepartners"
+  },
+  "menu": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Services",
+      "url": "/services"
+    },
+    {
+      "name": "Case Studies",
+      "url": "/case-studies"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ]
+}
